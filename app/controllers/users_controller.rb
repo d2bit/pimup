@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     # TODO: Move registration to its own controller
     @registration = Registration.new(registration_params)
 
-    if @registration.valid?
+    if @registration.save
       redirect_to page_path('registered')
     else
       render :new
